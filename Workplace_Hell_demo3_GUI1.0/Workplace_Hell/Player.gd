@@ -36,6 +36,7 @@ func _physics_process(delta):
 
 
 #https://www.youtube.com/watch?v=HycyFNQfqI0 watch for reference
+#Cory has edited this comment
 
 func start(new_position):
 	position = new_position
