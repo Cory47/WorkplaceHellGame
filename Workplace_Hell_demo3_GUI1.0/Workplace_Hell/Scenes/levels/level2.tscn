@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://wall.tres" type="TileSet" id=2]
 [ext_resource path="res://Scripts/Boss.gd" type="Script" id=3]
 [ext_resource path="res://Music/09 サイケデリックアカデミー.mp3" type="AudioStream" id=4]
 [ext_resource path="res://resources/Images/Sprite.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/levels/TaskObject.gd" type="Script" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 8 )
@@ -16,6 +17,11 @@ extents = Vector2( 9, 9 )
 extents = Vector2( 8, 8 )
 
 [sub_resource type="RectangleShape2D" id=4]
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 8, 8 )
+
+[sub_resource type="RectangleShape2D" id=6]
 
 [node name="Level" type="Node2D"]
 __meta__ = {
@@ -66,6 +72,23 @@ tile_data = PoolIntArray( -3014727, 0, 0, -3014726, 0, 0, -3014725, 0, 0, -30147
 stream = ExtResource( 4 )
 autoplay = true
 
+[node name="TaskObject" type="KinematicBody2D" parent="."]
+position = Vector2( -466, 146 )
+script = ExtResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TaskObject"]
+shape = SubResource( 5 )
+
+[node name="Sprite" type="Sprite" parent="TaskObject"]
+modulate = Color( 1, 0.866667, 0, 1 )
+texture = ExtResource( 5 )
+
+[node name="TaskHitbox" type="Area2D" parent="TaskObject"]
+
+[node name="TaskHitboxCollision" type="CollisionShape2D" parent="TaskObject/TaskHitbox"]
+shape = SubResource( 6 )
+
 [connection signal="hit" from="Player" to="Player" method="_on_Player_hit"]
 [connection signal="area_entered" from="Player/PlayerHitbox" to="Player" method="_on_PlayerHitbox_area_entered"]
 [connection signal="body_entered" from="Player/PlayerHitbox" to="Player" method="_on_PlayerHitbox_body_entered"]
+[connection signal="area_entered" from="TaskObject/TaskHitbox" to="TaskObject" method="_on_TaskHitbox_area_entered"]

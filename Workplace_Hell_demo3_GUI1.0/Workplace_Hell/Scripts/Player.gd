@@ -37,8 +37,8 @@ func start(new_position):
 
 
 func _on_PlayerHitbox_area_entered(area):
-	hide()
-	$PlayerCollision.set_deferred("disabled", true)
-	emit_signal("hit")
-	get_tree().change_scene("res://Scenes/WinMenu.tscn")
+	if (area.name == "TaskHitbox"):
+		pass
+	if (area.name == "BossHitbox"):
+		get_tree().change_scene("res://Scenes/LoseMenu.tscn")
 	

@@ -14,6 +14,11 @@ config/name="Workplace_Hell"
 run/main_scene="res://Scenes/levels/level1.tscn"
 config/icon="res://resources/Images/icon.png"
 
+[display]
+
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
