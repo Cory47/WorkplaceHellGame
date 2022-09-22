@@ -11,8 +11,8 @@ config_version=4
 [application]
 
 config/name="Workplace_Hell"
-run/main_scene="res://world.tscn"
-config/icon="res://icon.png"
+run/main_scene="res://Scenes/levels/level1.tscn"
+config/icon="res://resources/Images/icon.png"
 
 [gui]
 

@@ -1,0 +1,58 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/LevelSelect.gd" type="Script" id=1]
+[ext_resource path="res://Music/15 We're The Great.mp3" type="AudioStream" id=2]
+
+[node name="LevelSelect" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="LevelSelectContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
+
+[node name="Level1Button" type="Button" parent="LevelSelectContainer"]
+margin_right = 83.0
+margin_bottom = 20.0
+text = "Level 1"
+
+[node name="Level2Button" type="Button" parent="LevelSelectContainer"]
+margin_top = 24.0
+margin_right = 83.0
+margin_bottom = 44.0
+text = "Level 2"
+
+[node name="Level3Button" type="Button" parent="LevelSelectContainer"]
+margin_top = 48.0
+margin_right = 83.0
+margin_bottom = 68.0
+text = "Level 3"
+
+[node name="Level4Button" type="Button" parent="LevelSelectContainer"]
+margin_top = 72.0
+margin_right = 83.0
+margin_bottom = 92.0
+text = "Level 4"
+
+[node name="MenuButton" type="Button" parent="LevelSelectContainer"]
+margin_top = 96.0
+margin_right = 83.0
+margin_bottom = 116.0
+text = "Main Menu"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+autoplay = true
+
+[connection signal="pressed" from="LevelSelectContainer/Level1Button" to="." method="_on_Level1Button_pressed"]
+[connection signal="pressed" from="LevelSelectContainer/Level2Button" to="." method="_on_Level2Button_pressed"]
+[connection signal="pressed" from="LevelSelectContainer/Level3Button" to="." method="_on_Level3Button_pressed"]
+[connection signal="pressed" from="LevelSelectContainer/Level4Button" to="." method="_on_Level4Button_pressed"]
+[connection signal="pressed" from="LevelSelectContainer/MenuButton" to="." method="_on_MenuButton_pressed"]

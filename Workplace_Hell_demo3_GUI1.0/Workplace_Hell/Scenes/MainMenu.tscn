@@ -1,0 +1,107 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scripts/MainMenu.gd" type="Script" id=1]
+[ext_resource path="res://Music/01 Dance With Blue Wind copy.mp3" type="AudioStream" id=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Button
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+"
+
+[sub_resource type="GDScript" id=2]
+script/source = "extends Button
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+"
+
+[sub_resource type="GDScript" id=3]
+script/source = "extends Button
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+"
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 134.0
+margin_top = 115.0
+margin_right = 134.0
+margin_bottom = 115.0
+script = ExtResource( 1 )
+
+[node name="Menu Group" type="VBoxContainer" parent="."]
+margin_left = -90.0
+margin_top = 318.0
+margin_right = -27.0
+margin_bottom = 386.0
+rect_scale = Vector2( 1.88603, 1.88 )
+
+[node name="StartButton" type="Button" parent="Menu Group"]
+margin_right = 63.0
+margin_bottom = 20.0
+focus_neighbour_top = NodePath("../QuitButton")
+text = "Start"
+script = SubResource( 1 )
+
+[node name="OptionsButton" type="Button" parent="Menu Group"]
+margin_top = 24.0
+margin_right = 63.0
+margin_bottom = 44.0
+text = "Options"
+script = SubResource( 2 )
+
+[node name="QuitButton" type="Button" parent="Menu Group"]
+margin_top = 48.0
+margin_right = 63.0
+margin_bottom = 68.0
+focus_neighbour_bottom = NodePath("../StartButton")
+text = "Quit"
+script = SubResource( 3 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+autoplay = true
+
+[connection signal="pressed" from="Menu Group/StartButton" to="." method="_on_Start_Button_pressed"]
+[connection signal="pressed" from="Menu Group/OptionsButton" to="." method="_on_Options_Button_pressed"]
+[connection signal="pressed" from="Menu Group/QuitButton" to="." method="_on_Quit_Button_pressed"]

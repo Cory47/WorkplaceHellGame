@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/09 サイケデリックアカデミー.mp3-acc54aec0a00afdc599b30dfcef28f87.mp3str"
+
+[deps]
+
+source_file="res://Music/09 サイケデリックアカデミー.mp3"
+dest_files=[ "res://.import/09 サイケデリックアカデミー.mp3-acc54aec0a00afdc599b30dfcef28f87.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

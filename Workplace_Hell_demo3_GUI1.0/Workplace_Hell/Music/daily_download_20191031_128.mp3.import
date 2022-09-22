@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/daily_download_20191031_128.mp3-edf87e374a02f2a651a4183a4f2b0c7a.mp3str"
+
+[deps]
+
+source_file="res://Music/daily_download_20191031_128.mp3"
+dest_files=[ "res://.import/daily_download_20191031_128.mp3-edf87e374a02f2a651a4183a4f2b0c7a.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

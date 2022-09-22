@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/01 Dance With Blue Wind copy.mp3-fef11a97230adaf30c19a5efef8e9f84.mp3str"
+
+[deps]
+
+source_file="res://Music/01 Dance With Blue Wind copy.mp3"
+dest_files=[ "res://.import/01 Dance With Blue Wind copy.mp3-fef11a97230adaf30c19a5efef8e9f84.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
