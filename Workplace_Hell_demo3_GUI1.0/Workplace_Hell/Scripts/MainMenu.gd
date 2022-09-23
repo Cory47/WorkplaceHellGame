@@ -11,7 +11,9 @@ func _ready():
 	$"Menu Group/StartButton".grab_focus()
 
 func _on_Start_Button_pressed():
-	get_tree().change_scene("res://Scenes/LevelSelect.tscn")
+	$LevelSelect.visible = true;
+	$"Menu Group".visible = false;
+	$"LevelSelect/LevelSelectContainer/Level1Button".grab_focus()
 
 
 func _on_Options_Button_pressed():

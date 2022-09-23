@@ -17,7 +17,7 @@ func _ready():
 
 
 func _on_MenuButton_pressed():
-	get_tree().change_scene("res://Scenes/LevelSelect.tscn")
+	get_tree().change_scene("res://Scenes/MainMenu.tscn")
 
 
 func _on_RetryButton_pressed():

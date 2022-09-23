@@ -11,5 +11,5 @@ dest_files=[ "res://.import/happy-excited-logo-67-by-taigasoundprod-from-filmmus
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
