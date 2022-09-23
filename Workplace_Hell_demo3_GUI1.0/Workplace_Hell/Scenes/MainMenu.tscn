@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/MainMenu.gd" type="Script" id=1]
-[ext_resource path="res://Music/01 Dance With Blue Wind copy.mp3" type="AudioStream" id=2]
+[ext_resource path="res://Music/bits-and-bytes-by-claus-appel-from-filmmusic-io.mp3" type="AudioStream" id=2]
+[ext_resource path="res://Scenes/LevelSelect.tscn" type="PackedScene" id=3]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Button
@@ -68,6 +69,17 @@ margin_top = 115.0
 margin_right = 134.0
 margin_bottom = 115.0
 script = ExtResource( 1 )
+
+[node name="LevelSelect" parent="." instance=ExtResource( 3 )]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -644.0
+margin_top = -422.0
+margin_right = 380.0
+margin_bottom = 178.0
 
 [node name="Menu Group" type="VBoxContainer" parent="."]
 anchor_top = 0.5

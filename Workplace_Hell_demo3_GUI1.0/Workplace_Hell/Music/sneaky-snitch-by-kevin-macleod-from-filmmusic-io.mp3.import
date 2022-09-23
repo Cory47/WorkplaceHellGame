@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/sneaky-snitch-by-kevin-macleod-from-filmmusic-io.mp3-ae4e60f11515a459042ecaebfaadbbea.mp3str"
+
+[deps]
+
+source_file="res://Music/sneaky-snitch-by-kevin-macleod-from-filmmusic-io.mp3"
+dest_files=[ "res://.import/sneaky-snitch-by-kevin-macleod-from-filmmusic-io.mp3-ae4e60f11515a459042ecaebfaadbbea.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

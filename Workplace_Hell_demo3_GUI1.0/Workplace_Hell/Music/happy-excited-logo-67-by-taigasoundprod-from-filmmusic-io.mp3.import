@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/happy-excited-logo-67-by-taigasoundprod-from-filmmusic-io.mp3-a9c20756062c2cae78986681591c0a29.mp3str"
+
+[deps]
+
+source_file="res://Music/happy-excited-logo-67-by-taigasoundprod-from-filmmusic-io.mp3"
+dest_files=[ "res://.import/happy-excited-logo-67-by-taigasoundprod-from-filmmusic-io.mp3-a9c20756062c2cae78986681591c0a29.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

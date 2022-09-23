@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/bits-and-bytes-by-claus-appel-from-filmmusic-io.mp3-cdddbf3f6e37504f0d1cfd664c4404e9.mp3str"
+
+[deps]
+
+source_file="res://Music/bits-and-bytes-by-claus-appel-from-filmmusic-io.mp3"
+dest_files=[ "res://.import/bits-and-bytes-by-claus-appel-from-filmmusic-io.mp3-cdddbf3f6e37504f0d1cfd664c4404e9.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

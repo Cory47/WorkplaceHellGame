@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/scheming-weasel-faster-version-by-kevin-macleod-from-filmmusic-io.mp3-fe0d3b040c1f212e4ac2fdca991151bc.mp3str"
+
+[deps]
+
+source_file="res://Music/scheming-weasel-faster-version-by-kevin-macleod-from-filmmusic-io.mp3"
+dest_files=[ "res://.import/scheming-weasel-faster-version-by-kevin-macleod-from-filmmusic-io.mp3-fe0d3b040c1f212e4ac2fdca991151bc.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

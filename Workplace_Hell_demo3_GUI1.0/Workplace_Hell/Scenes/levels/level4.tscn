@@ -1,11 +1,12 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://wall.tres" type="TileSet" id=2]
 [ext_resource path="res://Scripts/Boss.gd" type="Script" id=3]
-[ext_resource path="res://Music/daily_download_20191031_128.mp3" type="AudioStream" id=4]
+[ext_resource path="res://Music/daily_download_20191031_128.2.wav" type="AudioStream" id=4]
 [ext_resource path="res://resources/Images/Sprite.png" type="Texture" id=5]
 [ext_resource path="res://Scenes/levels/TaskObject.gd" type="Script" id=6]
+[ext_resource path="res://Scenes/levels/Score.gd" type="Script" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 8 )
@@ -89,7 +90,25 @@ texture = ExtResource( 5 )
 [node name="TaskHitboxCollision" type="CollisionShape2D" parent="TaskObject/TaskHitbox"]
 shape = SubResource( 6 )
 
+[node name="ScoreLabel" type="Label" parent="."]
+margin_left = -134.0
+margin_top = -37.0
+margin_right = -63.0
+margin_bottom = -6.0
+text = "TASKS 
+COMPLETE:"
+
+[node name="Score" type="Label" parent="."]
+margin_left = -133.0
+margin_top = -1.0
+margin_right = -62.0
+margin_bottom = 30.0
+text = "0
+"
+script = ExtResource( 7 )
+
 [connection signal="hit" from="Player" to="Player" method="_on_Player_hit"]
 [connection signal="area_entered" from="Player/PlayerHitbox" to="Player" method="_on_PlayerHitbox_area_entered"]
 [connection signal="body_entered" from="Player/PlayerHitbox" to="Player" method="_on_PlayerHitbox_body_entered"]
 [connection signal="area_entered" from="TaskObject/TaskHitbox" to="TaskObject" method="_on_TaskHitbox_area_entered"]
+[connection signal="area_entered" from="TaskObject/TaskHitbox" to="Score" method="_on_TaskHitbox_area_entered"]
