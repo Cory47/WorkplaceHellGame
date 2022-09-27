@@ -1,0 +1,42 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Music/bits-and-bytes-by-claus-appel-from-filmmusic-io.mp3" type="AudioStream" id=2]
+
+[node name="PauseMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="LevelSelectContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
+
+[node name="NuxModeButton" type="Button" parent="LevelSelectContainer"]
+margin_right = 123.0
+margin_bottom = 20.0
+text = "Enable Nux Mode"
+
+[node name="ContinueButton" type="Button" parent="LevelSelectContainer"]
+margin_top = 24.0
+margin_right = 123.0
+margin_bottom = 44.0
+text = "Enable Nux Mode"
+
+[node name="MenuButton" type="Button" parent="LevelSelectContainer"]
+margin_top = 48.0
+margin_right = 123.0
+margin_bottom = 68.0
+text = "Main Menu"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+autoplay = true
+
+[connection signal="pressed" from="LevelSelectContainer/NuxModeButton" to="." method="_on_Level1Button_pressed"]
+[connection signal="pressed" from="LevelSelectContainer/ContinueButton" to="." method="_on_Level1Button_pressed"]
+[connection signal="pressed" from="LevelSelectContainer/MenuButton" to="." method="_on_MenuButton_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://wall.tres" type="TileSet" id=2]
@@ -7,12 +7,7 @@
 [ext_resource path="res://resources/Images/Sprite.png" type="Texture" id=5]
 [ext_resource path="res://Scenes/levels/TaskObject.gd" type="Script" id=6]
 [ext_resource path="res://Scenes/levels/Score.gd" type="Script" id=7]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 8, 8 )
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 9, 9 )
+[ext_resource path="res://resources/Images/basket_wood_parquet_20_13_height-708x708.webp" type="Texture" id=8]
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 8, 8 )
@@ -24,28 +19,26 @@ extents = Vector2( 8, 8 )
 
 [sub_resource type="RectangleShape2D" id=6]
 
-[node name="Level" type="Node2D"]
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8, 8 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 9, 9 )
+
+[node name="LastLevel" type="Node2D"]
 __meta__ = {
 "_edit_horizontal_guides_": [ -363.0 ]
 }
 
-[node name="Player" type="KinematicBody2D" parent="."]
-script = ExtResource( 1 )
+[node name="BasketWoodParquet2013Height-708X708" type="Sprite" parent="."]
+modulate = Color( 0.65098, 0.254902, 0.254902, 1 )
+position = Vector2( 355, 28 )
+texture = ExtResource( 8 )
 
-[node name="PlayerCollision" type="CollisionShape2D" parent="Player"]
-shape = SubResource( 1 )
-
-[node name="Sprite" type="Sprite" parent="Player"]
-texture = ExtResource( 5 )
-
-[node name="PlayerHitbox" type="Area2D" parent="Player"]
-
-[node name="HitboxCollision" type="CollisionShape2D" parent="Player/PlayerHitbox"]
-shape = SubResource( 2 )
-
-[node name="PlayerCamera" type="Camera2D" parent="Player"]
-current = true
-smoothing_enabled = true
+[node name="BasketWoodParquet2013Height-708X709" type="Sprite" parent="."]
+modulate = Color( 0.65098, 0.254902, 0.254902, 1 )
+position = Vector2( -353, 28 )
+texture = ExtResource( 8 )
 
 [node name="Boss" type="KinematicBody2D" parent="."]
 position = Vector2( 281, -100 )
@@ -107,8 +100,83 @@ text = "0
 "
 script = ExtResource( 7 )
 
+[node name="Player" type="KinematicBody2D" parent="."]
+script = ExtResource( 1 )
+
+[node name="PlayerCollision" type="CollisionShape2D" parent="Player"]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Player"]
+texture = ExtResource( 5 )
+
+[node name="PlayerHitbox" type="Area2D" parent="Player"]
+
+[node name="HitboxCollision" type="CollisionShape2D" parent="Player/PlayerHitbox"]
+shape = SubResource( 2 )
+
+[node name="PlayerCamera" type="Camera2D" parent="Player"]
+current = true
+smoothing_enabled = true
+
+[node name="PauseBackground" type="ColorRect" parent="Player/PlayerCamera"]
+visible = false
+margin_left = -547.0
+margin_top = -328.0
+margin_right = -507.0
+margin_bottom = -288.0
+rect_scale = Vector2( 27.0811, 16.3945 )
+color = Color( 0, 0, 0, 0.8 )
+
+[node name="LevelSelectContainer" type="VBoxContainer" parent="Player/PlayerCamera"]
+pause_mode = 2
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -117.0
+margin_top = -62.0
+margin_right = 6.0
+margin_bottom = 6.0
+rect_scale = Vector2( 2, 2 )
+
+[node name="NuxModeIndicator" type="Label" parent="Player/PlayerCamera/LevelSelectContainer"]
+margin_right = 140.0
+margin_bottom = 14.0
+text = "NUX MODE DISABLED"
+
+[node name="ResumeButton" type="Button" parent="Player/PlayerCamera/LevelSelectContainer"]
+margin_top = 18.0
+margin_right = 140.0
+margin_bottom = 38.0
+text = "Resume"
+
+[node name="NuxModeButton" type="Button" parent="Player/PlayerCamera/LevelSelectContainer"]
+margin_top = 42.0
+margin_right = 140.0
+margin_bottom = 62.0
+text = "Toggle Nux Mode"
+
+[node name="MenuButton" type="Button" parent="Player/PlayerCamera/LevelSelectContainer"]
+margin_top = 66.0
+margin_right = 140.0
+margin_bottom = 86.0
+text = "Main Menu"
+
+[node name="TasksComplete2" type="Label" parent="."]
+margin_left = -124.0
+margin_top = -1.0
+margin_right = -53.0
+margin_bottom = 30.0
+text = "/10
+"
+script = ExtResource( 7 )
+
+[connection signal="area_entered" from="TaskObject/TaskHitbox" to="TaskObject" method="_on_TaskHitbox_area_entered"]
+[connection signal="area_entered" from="TaskObject/TaskHitbox" to="Score" method="_on_TaskHitbox_area_entered"]
 [connection signal="hit" from="Player" to="Player" method="_on_Player_hit"]
 [connection signal="area_entered" from="Player/PlayerHitbox" to="Player" method="_on_PlayerHitbox_area_entered"]
 [connection signal="body_entered" from="Player/PlayerHitbox" to="Player" method="_on_PlayerHitbox_body_entered"]
-[connection signal="area_entered" from="TaskObject/TaskHitbox" to="TaskObject" method="_on_TaskHitbox_area_entered"]
-[connection signal="area_entered" from="TaskObject/TaskHitbox" to="Score" method="_on_TaskHitbox_area_entered"]
+[connection signal="pressed" from="Player/PlayerCamera/LevelSelectContainer/ResumeButton" to="Player" method="_on_ResumeButton_pressed"]
+[connection signal="pressed" from="Player/PlayerCamera/LevelSelectContainer/NuxModeButton" to="Player" method="_on_NuxModeButton_pressed"]
+[connection signal="pressed" from="Player/PlayerCamera/LevelSelectContainer/MenuButton" to="Player" method="_on_MenuButton_pressed"]
