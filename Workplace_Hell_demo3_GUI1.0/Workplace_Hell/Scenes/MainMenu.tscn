@@ -123,5 +123,5 @@ stream = ExtResource( 2 )
 autoplay = true
 
 [connection signal="pressed" from="Menu Group/StartButton" to="." method="_on_Start_Button_pressed"]
-[connection signal="pressed" from="Menu Group/CreditsButton" to="." method="_on_Options_Button_pressed"]
+[connection signal="pressed" from="Menu Group/CreditsButton" to="." method="_on_CreditsButton_pressed"]
 [connection signal="pressed" from="Menu Group/QuitButton" to="." method="_on_Quit_Button_pressed"]

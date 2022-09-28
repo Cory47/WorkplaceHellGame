@@ -17,7 +17,7 @@ func _on_TaskHitbox_area_entered(area):
 	
 	if (points >= 10):
 		print(get_tree().get_current_scene().get_name())
-		if (get_tree().get_current_scene().get_name() == "LastLevel"):
+		if (get_tree().get_current_scene().get_name() == "Level4"):
 			get_tree().change_scene("res://Scenes/Vacation.tscn")
 		else:
 			get_tree().change_scene("res://Scenes/WinMenu.tscn")

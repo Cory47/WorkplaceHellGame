@@ -25,7 +25,7 @@ extents = Vector2( 8, 8 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 9, 9 )
 
-[node name="LastLevel" type="Node2D"]
+[node name="Level4" type="Node2D"]
 __meta__ = {
 "_edit_horizontal_guides_": [ -363.0 ]
 }
@@ -68,7 +68,7 @@ volume_db = 10.0
 autoplay = true
 
 [node name="TaskObject" type="KinematicBody2D" parent="."]
-position = Vector2( -466, 146 )
+position = Vector2( 470, 278 )
 script = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TaskObject"]
@@ -90,6 +90,15 @@ margin_right = -63.0
 margin_bottom = -6.0
 text = "TASKS 
 COMPLETE:"
+
+[node name="TasksComplete2" type="Label" parent="."]
+margin_left = -124.0
+margin_top = -1.0
+margin_right = -53.0
+margin_bottom = 30.0
+text = "/10
+"
+script = ExtResource( 7 )
 
 [node name="Score" type="Label" parent="."]
 margin_left = -133.0
@@ -162,15 +171,6 @@ margin_top = 66.0
 margin_right = 140.0
 margin_bottom = 86.0
 text = "Main Menu"
-
-[node name="TasksComplete2" type="Label" parent="."]
-margin_left = -124.0
-margin_top = -1.0
-margin_right = -53.0
-margin_bottom = 30.0
-text = "/10
-"
-script = ExtResource( 7 )
 
 [connection signal="area_entered" from="TaskObject/TaskHitbox" to="TaskObject" method="_on_TaskHitbox_area_entered"]
 [connection signal="area_entered" from="TaskObject/TaskHitbox" to="Score" method="_on_TaskHitbox_area_entered"]

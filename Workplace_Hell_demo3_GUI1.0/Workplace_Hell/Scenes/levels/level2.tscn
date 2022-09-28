@@ -25,14 +25,37 @@ extents = Vector2( 8, 8 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 9, 9 )
 
-[node name="Level" type="Node2D"]
+[node name="Level2" type="Node2D"]
 __meta__ = {
 "_edit_horizontal_guides_": [ -363.0 ]
 }
 
-[node name="BasketWoodParquet2013Height-708X708" type="Sprite" parent="."]
-position = Vector2( 111, 66 )
-scale = Vector2( 2.07768, 1.64407 )
+[node name="BasketWoodParquet2013Height-708X709" type="Sprite" parent="."]
+position = Vector2( -527, 12 )
+texture = ExtResource( 8 )
+
+[node name="BasketWoodParquet2013Height-708X710" type="Sprite" parent="."]
+position = Vector2( 181, 12 )
+texture = ExtResource( 8 )
+
+[node name="BasketWoodParquet2013Height-708X711" type="Sprite" parent="."]
+position = Vector2( 890, 12 )
+texture = ExtResource( 8 )
+
+[node name="BasketWoodParquet2013Height-708X712" type="Sprite" parent="."]
+position = Vector2( 322, -696 )
+texture = ExtResource( 8 )
+
+[node name="BasketWoodParquet2013Height-708X713" type="Sprite" parent="."]
+position = Vector2( -370, -695 )
+texture = ExtResource( 8 )
+
+[node name="BasketWoodParquet2013Height-708X714" type="Sprite" parent="."]
+position = Vector2( -244, 715 )
+texture = ExtResource( 8 )
+
+[node name="BasketWoodParquet2013Height-708X715" type="Sprite" parent="."]
+position = Vector2( 441, 721 )
 texture = ExtResource( 8 )
 
 [node name="Boss" type="KinematicBody2D" parent="."]
@@ -62,7 +85,7 @@ stream = ExtResource( 4 )
 autoplay = true
 
 [node name="TaskObject" type="KinematicBody2D" parent="."]
-position = Vector2( -466, 146 )
+position = Vector2( 479, -270 )
 script = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TaskObject"]
@@ -91,6 +114,15 @@ margin_top = -40.0
 margin_right = -194.0
 margin_bottom = -9.0
 text = "0
+"
+script = ExtResource( 7 )
+
+[node name="TasksComplete2" type="Label" parent="."]
+margin_left = -256.0
+margin_top = -40.0
+margin_right = -185.0
+margin_bottom = -9.0
+text = "/10
 "
 script = ExtResource( 7 )
 
@@ -156,15 +188,6 @@ margin_top = 66.0
 margin_right = 140.0
 margin_bottom = 86.0
 text = "Main Menu"
-
-[node name="TasksComplete2" type="Label" parent="."]
-margin_left = -256.0
-margin_top = -40.0
-margin_right = -185.0
-margin_bottom = -9.0
-text = "/10
-"
-script = ExtResource( 7 )
 
 [connection signal="area_entered" from="TaskObject/TaskHitbox" to="TaskObject" method="_on_TaskHitbox_area_entered"]
 [connection signal="area_entered" from="TaskObject/TaskHitbox" to="Score" method="_on_TaskHitbox_area_entered"]
