@@ -39,6 +39,7 @@ texture = ExtResource( 4 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
+volume_db = 10.0
 autoplay = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -50,34 +51,32 @@ color = Color( 0, 0, 0, 0.780392 )
 
 [node name="Label" type="Label" parent="."]
 margin_left = 89.0
-margin_top = -131.0
+margin_top = -118.0
 margin_right = 737.0
-margin_bottom = 546.0
+margin_bottom = 576.0
 text = "
 Game Created by:
 Cory Marleau
 Margo Brown
 Emma Kelly
 
-Music:
+Dedicated to Fritz Heider and Marianne Simmel
+
 The following music was used for this media project:
 Music: Bits And Bytes by Claus Appel
 Free download: https://filmmusic.io/song/4688-bits-and-bytes
 License (CC BY 4.0): https://filmmusic.io/standard-license
 
-The following music was used for this media project:
 Music: Sneaky Snitch by Kevin MacLeod
 Free download: https://filmmusic.io/song/4384-sneaky-snitch
 License (CC BY 4.0): https://filmmusic.io/standard-license
 Artist website: https://incompetech.com
 
-The following music was used for this media project:
 Music: Scheming Weasel (faster version) by Kevin MacLeod
 Free download: https://filmmusic.io/song/4326-scheming-weasel-faster-version
 License (CC BY 4.0): https://filmmusic.io/standard-license
 Artist website: https://incompetech.com
 
-The following music was used for this media project:
 Music: Monkeys Spinning Monkeys by Kevin MacLeod
 Free download: https://filmmusic.io/song/4071-monkeys-spinning-monkeys
 License (CC BY 4.0): https://filmmusic.io/standard-license
@@ -89,7 +88,6 @@ https://www.yourclassical.org/episode/2019/10/31/daily-download-giuseppe-verdi--
 https://www.yourclassical.org/episode/2017/04/04/daily-download-js-bach--cello-suite-no-1-prelude
 
 Images provided through unsplash.com
-
 
 
 "

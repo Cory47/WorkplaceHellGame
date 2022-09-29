@@ -62,6 +62,7 @@ tile_data = PoolIntArray( -3014727, 0, 0, -3014726, 0, 0, -3014725, 0, 0, -30147
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
+volume_db = 3.0
 autoplay = true
 
 [node name="TaskObject" type="KinematicBody2D" parent="."]

@@ -59,7 +59,6 @@ text = "Retry"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
-volume_db = 3.0
 autoplay = true
 
 [connection signal="pressed" from="WinMenuContainer/MenuButton" to="." method="_on_MenuButton_pressed"]

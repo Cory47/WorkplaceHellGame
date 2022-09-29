@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://wall.tres" type="TileSet" id=2]
@@ -8,16 +8,25 @@
 [ext_resource path="res://Scenes/levels/TaskObject.gd" type="Script" id=6]
 [ext_resource path="res://Scenes/levels/Score.gd" type="Script" id=7]
 [ext_resource path="res://resources/Images/basket_wood_parquet_20_13_height-708x708.webp" type="Texture" id=8]
+[ext_resource path="res://Scenes/levels/Path.gd" type="Script" id=9]
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 8, 8 )
+
+[sub_resource type="RectangleShape2D" id=6]
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 8, 8 )
 
 [sub_resource type="RectangleShape2D" id=4]
 
-[sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 8, 8 )
+[sub_resource type="Curve2D" id=7]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -456, 40, 0, 0, 0, 0, -280, 40, 0, 0, 0, 0, -280, 232, 0, 0, 0, 0, -456, 232, 0, 0, 0, 0, -456, 40 )
+}
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 8, 8 )
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 8 )
@@ -39,22 +48,6 @@ texture = ExtResource( 8 )
 modulate = Color( 0.65098, 0.254902, 0.254902, 1 )
 position = Vector2( -353, 28 )
 texture = ExtResource( 8 )
-
-[node name="Boss" type="KinematicBody2D" parent="."]
-position = Vector2( 281, -100 )
-script = ExtResource( 3 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Boss"]
-shape = SubResource( 3 )
-
-[node name="Sprite" type="Sprite" parent="Boss"]
-modulate = Color( 1, 0, 0, 1 )
-texture = ExtResource( 5 )
-
-[node name="BossHitbox" type="Area2D" parent="Boss"]
-
-[node name="BossHitboxCollision" type="CollisionShape2D" parent="Boss/BossHitbox"]
-shape = SubResource( 4 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 2 )
@@ -108,6 +101,262 @@ margin_bottom = 30.0
 text = "0
 "
 script = ExtResource( 7 )
+
+[node name="Boss" type="KinematicBody2D" parent="."]
+position = Vector2( 281, -100 )
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boss"]
+shape = SubResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="Boss"]
+modulate = Color( 1, 0, 0, 1 )
+texture = ExtResource( 5 )
+
+[node name="BossHitbox" type="Area2D" parent="Boss"]
+
+[node name="BossHitboxCollision" type="CollisionShape2D" parent="Boss/BossHitbox"]
+shape = SubResource( 4 )
+
+[node name="CoworkerPath3" type="Path2D" parent="."]
+position = Vector2( 259, 737 )
+rotation = -4.71142
+scale = Vector2( 2, 2 )
+curve = SubResource( 7 )
+script = ExtResource( 9 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="CoworkerPath3"]
+position = Vector2( -456, 40 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="CoworkerPath3/PathFollow2D"]
+scale = Vector2( 0.75, 0.75 )
+
+[node name="Sprite" type="Sprite" parent="CoworkerPath3/PathFollow2D/StaticBody2D"]
+modulate = Color( 0, 0.0627451, 1, 1 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CoworkerPath3/PathFollow2D/StaticBody2D"]
+shape = SubResource( 8 )
+
+[node name="CoworkerPath4" type="Path2D" parent="."]
+position = Vector2( -745, 278 )
+rotation = -3.14348
+scale = Vector2( 2, 2 )
+curve = SubResource( 7 )
+script = ExtResource( 9 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="CoworkerPath4"]
+position = Vector2( -456, 40 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="CoworkerPath4/PathFollow2D"]
+scale = Vector2( 0.75, 0.75 )
+
+[node name="Sprite" type="Sprite" parent="CoworkerPath4/PathFollow2D/StaticBody2D"]
+modulate = Color( 0, 0.0627451, 1, 1 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CoworkerPath4/PathFollow2D/StaticBody2D"]
+shape = SubResource( 8 )
+
+[node name="CoworkerPath5" type="Path2D" parent="."]
+position = Vector2( -275, -731 )
+rotation = -1.5685
+scale = Vector2( 2, 2 )
+curve = SubResource( 7 )
+script = ExtResource( 9 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="CoworkerPath5"]
+position = Vector2( -456, 40 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="CoworkerPath5/PathFollow2D"]
+scale = Vector2( 0.75, 0.75 )
+
+[node name="Sprite" type="Sprite" parent="CoworkerPath5/PathFollow2D/StaticBody2D"]
+modulate = Color( 0, 0.0627451, 1, 1 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CoworkerPath5/PathFollow2D/StaticBody2D"]
+shape = SubResource( 8 )
+
+[node name="CoworkerPath6" type="Path2D" parent="."]
+position = Vector2( 732, -249 )
+rotation = 0.0132937
+scale = Vector2( 2, 2 )
+curve = SubResource( 7 )
+script = ExtResource( 9 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="CoworkerPath6"]
+position = Vector2( -456, 40 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="CoworkerPath6/PathFollow2D"]
+scale = Vector2( 0.75, 0.75 )
+
+[node name="Sprite" type="Sprite" parent="CoworkerPath6/PathFollow2D/StaticBody2D"]
+modulate = Color( 0, 0.0627451, 1, 1 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CoworkerPath6/PathFollow2D/StaticBody2D"]
+shape = SubResource( 8 )
+
+[node name="CoworkerPath7" type="Path2D" parent="."]
+position = Vector2( 259, 737 )
+rotation = -4.8356
+scale = Vector2( 2, 2 )
+curve = SubResource( 7 )
+script = ExtResource( 9 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="CoworkerPath7"]
+position = Vector2( -456, 40 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="CoworkerPath7/PathFollow2D"]
+scale = Vector2( 0.75, 0.75 )
+
+[node name="Sprite" type="Sprite" parent="CoworkerPath7/PathFollow2D/StaticBody2D"]
+modulate = Color( 0, 0.0627451, 1, 1 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CoworkerPath7/PathFollow2D/StaticBody2D"]
+shape = SubResource( 8 )
+
+[node name="CoworkerPath8" type="Path2D" parent="."]
+position = Vector2( -745, 278 )
+rotation = -3.26766
+scale = Vector2( 2, 2 )
+curve = SubResource( 7 )
+script = ExtResource( 9 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="CoworkerPath8"]
+position = Vector2( -456, 40 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="CoworkerPath8/PathFollow2D"]
+scale = Vector2( 0.75, 0.75 )
+
+[node name="Sprite" type="Sprite" parent="CoworkerPath8/PathFollow2D/StaticBody2D"]
+modulate = Color( 0, 0.0627451, 1, 1 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CoworkerPath8/PathFollow2D/StaticBody2D"]
+shape = SubResource( 8 )
+
+[node name="CoworkerPath9" type="Path2D" parent="."]
+position = Vector2( -275, -731 )
+rotation = -1.69267
+scale = Vector2( 2, 2 )
+curve = SubResource( 7 )
+script = ExtResource( 9 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="CoworkerPath9"]
+position = Vector2( -456, 40 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="CoworkerPath9/PathFollow2D"]
+scale = Vector2( 0.75, 0.75 )
+
+[node name="Sprite" type="Sprite" parent="CoworkerPath9/PathFollow2D/StaticBody2D"]
+modulate = Color( 0, 0.0627451, 1, 1 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CoworkerPath9/PathFollow2D/StaticBody2D"]
+shape = SubResource( 8 )
+
+[node name="CoworkerPath10" type="Path2D" parent="."]
+position = Vector2( 732, -249 )
+rotation = -0.110882
+scale = Vector2( 2, 2 )
+curve = SubResource( 7 )
+script = ExtResource( 9 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="CoworkerPath10"]
+position = Vector2( -456, 40 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="CoworkerPath10/PathFollow2D"]
+scale = Vector2( 0.75, 0.75 )
+
+[node name="Sprite" type="Sprite" parent="CoworkerPath10/PathFollow2D/StaticBody2D"]
+modulate = Color( 0, 0.0627451, 1, 1 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CoworkerPath10/PathFollow2D/StaticBody2D"]
+shape = SubResource( 8 )
+
+[node name="CoworkerPath11" type="Path2D" parent="."]
+position = Vector2( 259, 737 )
+rotation = -3.95393
+scale = Vector2( 2, 2 )
+curve = SubResource( 7 )
+script = ExtResource( 9 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="CoworkerPath11"]
+position = Vector2( -456, 40 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="CoworkerPath11/PathFollow2D"]
+scale = Vector2( 0.75, 0.75 )
+
+[node name="Sprite" type="Sprite" parent="CoworkerPath11/PathFollow2D/StaticBody2D"]
+modulate = Color( 0, 0.0627451, 1, 1 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CoworkerPath11/PathFollow2D/StaticBody2D"]
+shape = SubResource( 8 )
+
+[node name="CoworkerPath12" type="Path2D" parent="."]
+position = Vector2( -745, 278 )
+rotation = -2.38599
+scale = Vector2( 2, 2 )
+curve = SubResource( 7 )
+script = ExtResource( 9 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="CoworkerPath12"]
+position = Vector2( -456, 40 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="CoworkerPath12/PathFollow2D"]
+scale = Vector2( 0.75, 0.75 )
+
+[node name="Sprite" type="Sprite" parent="CoworkerPath12/PathFollow2D/StaticBody2D"]
+modulate = Color( 0, 0.0627451, 1, 1 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CoworkerPath12/PathFollow2D/StaticBody2D"]
+shape = SubResource( 8 )
+
+[node name="CoworkerPath13" type="Path2D" parent="."]
+position = Vector2( -275, -731 )
+rotation = -0.811001
+scale = Vector2( 2, 2 )
+curve = SubResource( 7 )
+script = ExtResource( 9 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="CoworkerPath13"]
+position = Vector2( -456, 40 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="CoworkerPath13/PathFollow2D"]
+scale = Vector2( 0.75, 0.75 )
+
+[node name="Sprite" type="Sprite" parent="CoworkerPath13/PathFollow2D/StaticBody2D"]
+modulate = Color( 0, 0.0627451, 1, 1 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CoworkerPath13/PathFollow2D/StaticBody2D"]
+shape = SubResource( 8 )
+
+[node name="CoworkerPath14" type="Path2D" parent="."]
+position = Vector2( 732, -249 )
+rotation = 0.77079
+scale = Vector2( 2, 2 )
+curve = SubResource( 7 )
+script = ExtResource( 9 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="CoworkerPath14"]
+position = Vector2( -456, 40 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="CoworkerPath14/PathFollow2D"]
+scale = Vector2( 0.75, 0.75 )
+
+[node name="Sprite" type="Sprite" parent="CoworkerPath14/PathFollow2D/StaticBody2D"]
+modulate = Color( 0, 0.0627451, 1, 1 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CoworkerPath14/PathFollow2D/StaticBody2D"]
+shape = SubResource( 8 )
 
 [node name="Player" type="KinematicBody2D" parent="."]
 script = ExtResource( 1 )

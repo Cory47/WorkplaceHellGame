@@ -41,6 +41,16 @@ margin_bottom = -53.0
 text = "TASKS 
 COMPLETE:"
 
+[node name="ScoreLabel2" type="Label" parent="."]
+margin_left = -491.0
+margin_top = 45.0
+margin_right = -354.0
+margin_bottom = 110.0
+text = "Complete tasks
+by colliding with
+them. Collect enough
+and be promoted."
+
 [node name="Score" type="Label" parent="."]
 margin_left = -245.0
 margin_top = -48.0
@@ -58,6 +68,23 @@ margin_bottom = -17.0
 text = "/10
 "
 script = ExtResource( 7 )
+
+[node name="MoveLabel" type="Label" parent="."]
+margin_left = -104.0
+margin_top = -89.0
+margin_right = 31.0
+margin_bottom = -58.0
+rect_scale = Vector2( 1.50529, 1.57224 )
+text = "Press WSAD to move"
+
+[node name="PauseLabel" type="Label" parent="."]
+margin_left = 132.0
+margin_top = -88.0
+margin_right = 267.0
+margin_bottom = -57.0
+rect_scale = Vector2( 1.50529, 1.57224 )
+text = "Press \"ESC\"
+to pause"
 
 [node name="Boss" type="KinematicBody2D" parent="."]
 position = Vector2( 280, 2 )
@@ -99,24 +126,8 @@ tile_data = PoolIntArray( -3014727, 0, 0, -3014726, 0, 0, -3014725, 0, 0, -30147
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
+volume_db = 10.0
 autoplay = true
-
-[node name="MoveLabel" type="Label" parent="."]
-margin_left = -104.0
-margin_top = -89.0
-margin_right = 31.0
-margin_bottom = -58.0
-rect_scale = Vector2( 1.50529, 1.57224 )
-text = "Press WSAD to move"
-
-[node name="PauseLabel" type="Label" parent="."]
-margin_left = 132.0
-margin_top = -88.0
-margin_right = 267.0
-margin_bottom = -57.0
-rect_scale = Vector2( 1.50529, 1.57224 )
-text = "Press \"ESC\"
-to pause"
 
 [node name="Player" type="KinematicBody2D" parent="."]
 script = ExtResource( 1 )
