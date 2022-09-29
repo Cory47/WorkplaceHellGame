@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://wall.tres" type="TileSet" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Scenes/levels/Score.gd" type="Script" id=7]
 [ext_resource path="res://resources/Images/basket_wood_parquet_20_13_height-708x708.webp" type="Texture" id=8]
 [ext_resource path="res://Scenes/levels/Path.gd" type="Script" id=9]
+[ext_resource path="res://Scenes/levels/CoworkerPathReverse.gd" type="Script" id=10]
 
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 8, 8 )
@@ -203,7 +204,7 @@ position = Vector2( 259, 737 )
 rotation = -4.8356
 scale = Vector2( 2, 2 )
 curve = SubResource( 7 )
-script = ExtResource( 9 )
+script = ExtResource( 10 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="CoworkerPath7"]
 position = Vector2( -456, 40 )
@@ -223,7 +224,7 @@ position = Vector2( -745, 278 )
 rotation = -3.26766
 scale = Vector2( 2, 2 )
 curve = SubResource( 7 )
-script = ExtResource( 9 )
+script = ExtResource( 10 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="CoworkerPath8"]
 position = Vector2( -456, 40 )
@@ -243,7 +244,7 @@ position = Vector2( -275, -731 )
 rotation = -1.69267
 scale = Vector2( 2, 2 )
 curve = SubResource( 7 )
-script = ExtResource( 9 )
+script = ExtResource( 10 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="CoworkerPath9"]
 position = Vector2( -456, 40 )
@@ -263,7 +264,7 @@ position = Vector2( 732, -249 )
 rotation = -0.110882
 scale = Vector2( 2, 2 )
 curve = SubResource( 7 )
-script = ExtResource( 9 )
+script = ExtResource( 10 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="CoworkerPath10"]
 position = Vector2( -456, 40 )
