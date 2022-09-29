@@ -13,8 +13,8 @@ dest_files=[ "res://.import/Air.wav-95775234e7297c3321f4eed73c33874a.sample" ]
 
 force/8_bit=false
 force/mono=false
-force/max_rate=false
-force/max_rate_hz=44100
+force/max_rate=true
+force/max_rate_hz=44099.0
 edit/trim=false
 edit/normalize=false
 edit/loop_mode=2

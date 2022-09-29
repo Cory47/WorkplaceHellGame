@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scenes/VacationMenu.gd" type="Script" id=1]
-[ext_resource path="res://Music/Air.wav" type="AudioStream" id=2]
+[ext_resource path="res://Music/Desktop.wav" type="AudioStream" id=2]
 [ext_resource path="res://resources/Images/david-vives-ELf8M_YWRTY-unsplash.jpg" type="Texture" id=3]
 
 [node name="WinMenu" type="Control"]
